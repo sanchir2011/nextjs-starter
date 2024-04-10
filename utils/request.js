@@ -30,7 +30,7 @@ export const sendGet = async (url, auth = true, cache = true) => {
         else headers = {"Content-Type": "application/json"}
         let fetchOptions = { method: 'GET', headers: headers }
         if(!cache) fetchOptions = { ...fetchOptions, cache: 'no-store' }
-        const res = await fetch(process.env.NEXTAUTH_URL + '/v1/api' + url, fetchOptions)
+        const res = await fetch(process.env.NEXT_URL + '/v1/api' + url, fetchOptions)
         if(!res) return false
         const contentType = res.headers.get('content-type')
         if (!contentType || !contentType.includes('application/json')) return false
@@ -69,7 +69,7 @@ export const sendPost = async (url, body, auth = true, cache = true) => {
         else headers = {"Content-Type": "application/json"}
         let fetchOptions = { method: 'POST', headers: headers, body: JSON.stringify(body) }
         if(!cache) fetchOptions = { ...fetchOptions, cache: 'no-store' }
-        const res = await fetch(process.env.NEXTAUTH_URL + '/v1/api' + url, fetchOptions)
+        const res = await fetch(process.env.NEXT_URL + '/v1/api' + url, fetchOptions)
         if(!res) return false
         const contentType = res.headers.get('content-type')
         if (!contentType || !contentType.includes('application/json')) return false
@@ -108,7 +108,7 @@ export const sendPut = async (url, body, auth = true, cache = true) => {
         else headers = {"Content-Type": "application/json"}
         let fetchOptions = { method: 'PUT', headers: headers, body: JSON.stringify(body) }
         if(!cache) fetchOptions = { ...fetchOptions, cache: 'no-store' }
-        const res = await fetch(process.env.NEXTAUTH_URL + '/v1/api' + url, fetchOptions)
+        const res = await fetch(process.env.NEXT_URL + '/v1/api' + url, fetchOptions)
         if(!res) return false
         const contentType = res.headers.get('content-type')
         if (!contentType || !contentType.includes('application/json')) return false
@@ -145,7 +145,7 @@ export const sendDelete = async (url, auth = true) => {
         let headers = {}
         if(auth) headers = {"Authorization" : `Bearer ${accessToken}`, "Content-Type": "application/json"}
         else headers = {"Content-Type": "application/json"}
-        const res = await fetch(process.env.NEXTAUTH_URL + '/v1/api' + url, {
+        const res = await fetch(process.env.NEXT_URL + '/v1/api' + url, {
             method: 'DELETE',
             headers: headers
         })
@@ -183,7 +183,7 @@ export const sendImages = async (formData, auth = true) => {
         }
         let headers = {}
         if(auth) headers = {"Authorization" : `Bearer ${accessToken}`}
-        const res = await fetch(process.env.NEXTAUTH_URL + '/v1/api/upload', {
+        const res = await fetch(process.env.NEXT_URL + '/v1/api/upload', {
             method: 'POST',
             headers: headers,
             body: formData

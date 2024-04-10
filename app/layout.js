@@ -12,7 +12,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["cyrillic-ext", "cyrillic", "latin"] })
 
 export const metadata = {
-    metadataBase: new URL(process.env.NEXTAUTH_URL),
+    metadataBase: new URL(process.env.NEXT_URL),
     title: "Next.js Starter Kit",
     description: "Next.js Starter Kit by Sanchir Enkhbold",
     robots: {
