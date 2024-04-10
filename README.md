@@ -4,15 +4,15 @@
 Visit to my portfolio for more: https://sanchir.dev
 
 ### What's included?
-- With Tailwind CSS you can create an amazing looking website.
-- Beautiful toaster by `sonner`.
+- With Tailwind CSS, you can create an amazing-looking website.
+- Beautiful toast notifications by `sonner`.
 - Third party auth: **Google Sign in** (soon will add more).
-- Pre-made authorization pages that includes: Login, Register, Logout, Forgot Password, Reset Password, Verify Email.
+- Pre-made authorization pages that include: Login, Register, Logout, Forgot Password, Reset Password, Verify Email.
 - Customized 404 page.
-- All dark mode. Looks stunning 🤩.
+- Everything is in dark mode, which looks stunning 🤩.
 
 ### Installation guide:
- 1. Clone this repo to your folder: `git clone https://github.com/sanchir2011/nextjs-starter.git my-web`
+ 1. Clone this repository to your folder: `git clone https://github.com/sanchir2011/nextjs-starter.git my-web`
  2. Go to the folder where you cloned: `cd my-web`
  3. Install all dependencies by running `npm install`
  4. Create `.env` file for development: `cp .env.example .env`
@@ -23,6 +23,6 @@ Visit to my portfolio for more: https://sanchir.dev
  9. Finally, If you are using any buckets (Google Storage Bucket, etc.), please provide your url on `NEXT_PUBLIC_BUCKET`.
  10. Now you are safe to run `npm run dev` to start your Next.js.
 
-Congratulations 🎉 You just created your Next.js Project 😊
+Congratulations 🎉 You just created your Next.js project 😊.
  
- If you liked it, please leave a star ⭐️. Thanks!
+If you liked it, please leave a star ⭐️. Thanks!
