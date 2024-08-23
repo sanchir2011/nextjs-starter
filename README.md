@@ -1,5 +1,13 @@
 ## Next.js Starter Kit by Sanchir Enkhbold
-*Next.js version 14.1.4*
+*version 1.1*
+
+- [x] Next.js v14.2.6
+- [x] Next Auth v4.24.7
+- [x] React v18
+- [x] Headless UI v2.1.2
+- [x] Framer motion v11.3.29
+- [x] Lucide Icon v0.429.0
+- [x] Sonner Toast v1.5.0
 
 Visit to my portfolio for more: https://sanchir.dev
 
