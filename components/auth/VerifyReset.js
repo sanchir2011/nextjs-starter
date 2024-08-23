@@ -26,7 +26,7 @@ export default function VerifyReset(){
     useEffect(() => {
         if(email && code) {
             const verify = async () => {
-                const response = await validateCode(email, code)
+                const response = await validateCode({ email, code })
                 if(response && response.status == 200) setValid(true)
                 else setValid(false)
                 setLoading(false)
@@ -53,7 +53,7 @@ export default function VerifyReset(){
         if(password !== passwordRep) return toast.error('Нууц үг таарахгүй байна')
 
         setLoading(true)
-        const response = await resetPassword(email, password, code)
+        const response = await resetPassword({ email, password, code })
         if(!response) {
             setLoading(false)
             return toast.error('Сервертэй холбогдоход алдаа гарлаа')
@@ -75,37 +75,37 @@ export default function VerifyReset(){
                 valid ? (
                     <div className='w-full p-6 sm:w-[380px] sm:p-0 mx-auto'>
                         <div className="text-center flex flex-col items-center">
-                            <h2 className="text-2xl font-bold leading-9 tracking-tight text-zinc-50 mt-4">
+                            <h2 className="text-2xl font-bold leading-9 tracking-tight text-dark-50 mt-4">
                                 Нууц үг сэргээх
                             </h2>
                         </div>
                         <div className="space-y-4 mt-6">
                             <div>
-                                <label htmlFor="password" className="block text-sm font-medium leading-6 text-zinc-50">
+                                <label htmlFor="password" className="block text-sm font-medium leading-6 text-dark-50">
                                     Шинэ нууц үг
                                 </label>
                                 <div className="mt-2">
-                                    <input id="password" onChange={handlePasswordChange} name="password" autoFocus type="password" placeholder='Таны шинэ нууц үг' onKeyDown={handleKeyDown} required className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset bg-zinc-800 ring-zinc-700 placeholder:text-zinc-500 focus:ring-2 focus:ring-inset focus:ring-zinc-100 sm:text-sm sm:leading-6" />
+                                    <input id="password" onChange={handlePasswordChange} name="password" autoFocus type="password" placeholder='Таны шинэ нууц үг' onKeyDown={handleKeyDown} required className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset bg-dark-800 ring-dark-700 placeholder:text-dark-500 focus:ring-2 focus:ring-inset focus:ring-dark-100 sm:text-sm sm:leading-6" />
                                 </div>
-                                <p className='text-xs mt-1 text-zinc-200'>8-аас дээш тэмдэгтэй байх ёстой</p>
+                                <p className='text-xs mt-1 text-dark-200'>8-аас дээш тэмдэгтэй байх ёстой</p>
                             </div>
 
                             <div>
-                                <label htmlFor="passwordRep" className="block text-sm font-medium leading-6 text-zinc-50">
+                                <label htmlFor="passwordRep" className="block text-sm font-medium leading-6 text-dark-50">
                                     Шинэ нууц үг давтах
                                 </label>
                                 <div className="mt-2">
-                                    <input id="passwordRep" onChange={handlePasswordRepChange} name="passwordRep" type="password" placeholder='Шинэ нууц үг давтах' onKeyDown={handleKeyDown} required className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset bg-zinc-800 ring-zinc-700 placeholder:text-zinc-500 focus:ring-2 focus:ring-inset focus:ring-zinc-100 sm:text-sm sm:leading-6" />
+                                    <input id="passwordRep" onChange={handlePasswordRepChange} name="passwordRep" type="password" placeholder='Шинэ нууц үг давтах' onKeyDown={handleKeyDown} required className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset bg-dark-800 ring-dark-700 placeholder:text-dark-500 focus:ring-2 focus:ring-inset focus:ring-dark-100 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
                             <div className='pt-2'>
                                 { btnLoading ? (
-                                    <button type="button" className="flex w-full justify-center rounded-md bg-zinc-100 px-3 py-1.5 text-sm font-semibold leading-6 text-zinc-800 shadow-sm" >
+                                    <button type="button" className="flex w-full justify-center rounded-md bg-dark-100 px-3 py-1.5 text-sm font-semibold leading-6 text-dark-800 shadow-sm" >
                                         Уншиж байна ...
                                     </button>
                                 ) : (
-                                    <button type="button" onClick={handleResetPassword} className="flex w-full justify-center rounded-md bg-zinc-100 px-3 py-1.5 text-sm font-semibold leading-6 text-zinc-800 shadow-sm hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-100" >
+                                    <button type="button" onClick={handleResetPassword} className="flex w-full justify-center rounded-md bg-dark-100 px-3 py-1.5 text-sm font-semibold leading-6 text-dark-800 shadow-sm hover:bg-dark-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark-100" >
                                         Нууц үг солих
                                     </button>
                                 ) }
@@ -115,13 +115,13 @@ export default function VerifyReset(){
                 ) : (
                     <div className='flex flex-col gap-4 items-center justify-center'>
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-                            <CircleX className='w-20 h-20 text-zinc-50' />
+                            <CircleX className='w-20 h-20 text-dark-50' />
                         </motion.div>
-                        <motion.div className='text-center text-xl font-semibold text-zinc-50' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+                        <motion.div className='text-center text-xl font-semibold text-dark-50' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
                             Код хүчингүй болсон эсвэл имэйл хаяг буруу байна 😢
                         </motion.div>
                         <motion.div className='flex-grow-0 mt-4' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
-                            <button onClick={() => router.push('/')} type="button" className="rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20" >
+                            <button onClick={() => router.push('/')} type="button" className="rounded-md bg-dark-50/10 px-3.5 py-2.5 text-sm font-semibold text-dark-50 shadow-sm hover:bg-dark-50/20" >
                                 Нүүр хуудас
                             </button>
                         </motion.div>

@@ -11,7 +11,7 @@ export default function Logout(){
     else signOut({ callbackUrl: "/" })
 
     return (
-        <div className="flex h-screen justify-center items-center font-semibold text-zinc-100 px-16 text-center">
+        <div className="flex h-screen justify-center items-center font-semibold text-dark-100 px-16 text-center">
             Таныг системээс гаргаж байна. Түр хүлээнэ үү...
         </div>
     )

@@ -1,18 +1,10 @@
-import { ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
 import moment from "moment"
  
 /* ============== Class niiluuleh ============== */
 
-export function cn(...inputs) {
-    return twMerge(clsx(inputs))
-}
-
 export function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
-
-
 /* ============== Check inputs ============== */
 
 export const isValidEmail = (email) => { // only email format
@@ -109,12 +101,32 @@ export function formatDateNormal(date){ // 2024-04-10T12:00:00.000Z => 2024.04.1
     return `${year}.${month}.${day}`;
 }
 
+export function formatDateTimeNormal(date){ // 2024-04-10T12:00:00.000Z => 2024.04.10 12:00
+    date = new Date(date);
+    var day = String(date.getDate()).padStart(2, '0');
+    var month = String(date.getMonth() + 1).padStart(2, '0');
+    var year = String(date.getFullYear());
+    var hours = String(date.getHours()).padStart(2, '0');
+    var minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${year}.${month}.${day} ${hours}:${minutes}`;
+}
+
 export function formatDateLong(date){ // 2024-04-10T12:00:00.000Z => 2024 оны 04-р сарын 10
     date = new Date(date);
     var day = String(date.getDate());
     var month = String(date.getMonth() + 1);
     var year = String(date.getFullYear());
     return `${year} оны ${month}-р сарын ${day}`;
+}
+
+export function formatDateTimeLong(date){ // 2024-04-10T12:00:00.000Z => 2024 оны 04-р сарын 10 12:00
+    date = new Date(date);
+    var day = String(date.getDate());
+    var month = String(date.getMonth() + 1);
+    var year = String(date.getFullYear());
+    var hours = String(date.getHours()).padStart(2, '0');
+    var minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${year} оны ${month}-р сарын ${day} ${hours}:${minutes}`;
 }
 
 export function calcBetweenDates(start, end){ // 2024-04-10T12:00:00.000Z, 2024-04-15T12:00:00.000Z => 5

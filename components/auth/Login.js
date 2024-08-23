@@ -61,7 +61,7 @@ export default function Login() {
     return (
         <div className="w-full p-6 sm:w-[380px] sm:p-0">
             <div className="text-center flex flex-col items-center">
-                <h2 className="text-2xl font-bold leading-9 tracking-tight text-zinc-50 mt-4">
+                <h2 className="text-2xl font-bold leading-9 tracking-tight text-dark-50 mt-4">
                     Нэвтрэх
                 </h2>
             </div>
@@ -69,24 +69,24 @@ export default function Login() {
             <div className="mt-6">
                 <div className="space-y-4 grid grid-cols-2">
                     <div className='col-span-full'>
-                        <label htmlFor="email" className="block text-sm font-medium leading-6 text-zinc-50">
+                        <label htmlFor="email" className="block text-sm font-medium leading-6 text-dark-50">
                             Имэйл хаяг
                         </label>
                         <div className="mt-2">
-                            <input id="email" onChange={handleEmailUsernameChange} name="email" type="email" placeholder="sanchir@mail.mn" required autoFocus className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset bg-zinc-800 ring-zinc-700 placeholder:text-zinc-500 focus:ring-2 focus:ring-inset focus:ring-zinc-100 sm:text-sm sm:leading-6" />
+                            <input id="email" onChange={handleEmailUsernameChange} name="email" type="email" placeholder="sanchir@mail.mn" required autoFocus className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset bg-dark-800 ring-dark-700 placeholder:text-dark-500 focus:ring-2 focus:ring-inset focus:ring-dark-100 sm:text-sm sm:leading-6" />
                         </div>
                     </div>
 
                     <div className='col-span-full'>
-                        <label htmlFor="password" className="block text-sm font-medium leading-6 text-zinc-50">
+                        <label htmlFor="password" className="block text-sm font-medium leading-6 text-dark-50">
                             Нууц үг
                         </label>
                         <div className="mt-2">
-                            <input id="password" onChange={handlePasswordChange} name="password" type="password" placeholder='Таны нууц үг' onKeyDown={handleKeyDown} required className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset bg-zinc-800 ring-zinc-700 placeholder:text-zinc-500 focus:ring-2 focus:ring-inset focus:ring-zinc-100 sm:text-sm sm:leading-6" />
+                            <input id="password" onChange={handlePasswordChange} name="password" type="password" placeholder='Таны нууц үг' onKeyDown={handleKeyDown} required className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset bg-dark-800 ring-dark-700 placeholder:text-dark-500 focus:ring-2 focus:ring-inset focus:ring-dark-100 sm:text-sm sm:leading-6" />
                         </div>
                         <div className="flex items-center justify-end mt-1">
                             <div className="text-sm leading-6">
-                                <Link href="/forgot" className="font-semibold text-zinc-300 hover:text-zinc-50">
+                                <Link href="/forgot" className="font-semibold text-dark-300 hover:text-dark-50">
                                     Нууц үгээ мартсан уу?
                                 </Link>
                             </div>
@@ -94,7 +94,7 @@ export default function Login() {
                     </div>
 
                     <div className='col-span-full'>
-                        <button type="button" onClick={handleLogin} className="flex w-full justify-center rounded-md bg-zinc-100 px-3 py-1.5 text-sm font-semibold leading-6 text-zinc-800 shadow-sm hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-100" >
+                        <button type="button" onClick={handleLogin} className="flex w-full justify-center rounded-md bg-dark-100 px-3 py-1.5 text-sm font-semibold leading-6 text-dark-800 shadow-sm hover:bg-dark-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark-100" >
                             Нэвтрэх
                         </button>
                     </div>
@@ -102,15 +102,15 @@ export default function Login() {
 
                 <div className="relative mt-6">
                     <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div className="w-full border-t border-zinc-800" />
+                        <div className="w-full border-t border-dark-800" />
                     </div>
                     <div className="relative flex justify-center text-sm font-medium leading-6">
-                        <span className="bg-zinc-950 px-6 text-zinc-400">Эсвэл</span>
+                        <span className="bg-dark-950 px-6 text-dark-400">Эсвэл</span>
                     </div>
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 gap-4">
-                    <button type="button" onClick={signInWithGoogle} className="flex w-full items-center justify-center gap-3 rounded-md bg-zinc-800 px-3 py-2 text-sm font-semibold text-zinc-1000 shadow-sm ring-1 ring-inset ring-zinc-800 hover:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-100" >
+                    <button type="button" onClick={signInWithGoogle} className="flex w-full items-center justify-center gap-3 rounded-md bg-dark-800 px-3 py-2 text-sm font-semibold text-dark-1000 shadow-sm ring-1 ring-inset ring-dark-800 hover:bg-dark-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark-100" >
                         <svg className="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24">
                             <path d="M12.0003 4.75C13.7703 4.75 15.3553 5.36002 16.6053 6.54998L20.0303 3.125C17.9502 1.19 15.2353 0 12.0003 0C7.31028 0 3.25527 2.69 1.28027 6.60998L5.27028 9.70498C6.21525 6.86002 8.87028 4.75 12.0003 4.75Z" fill="#EA4335" />
                             <path d="M23.49 12.275C23.49 11.49 23.415 10.73 23.3 10H12V14.51H18.47C18.18 15.99 17.34 17.25 16.08 18.1L19.945 21.1C22.2 19.01 23.49 15.92 23.49 12.275Z" fill="#4285F4" />
@@ -121,9 +121,9 @@ export default function Login() {
                     </button>
                 </div>
 
-                <p className="mt-6 text-sm leading-6 text-zinc-400 text-center">
+                <p className="mt-6 text-sm leading-6 text-dark-400 text-center">
                     Шинэ хэрэглэгч үү?{' '}
-                    <span onClick={routeToRegister} className="cursor-pointer font-semibold text-zinc-100 hover:text-zinc-200 ml-1">
+                    <span onClick={routeToRegister} className="cursor-pointer font-semibold text-dark-100 hover:text-dark-200 ml-1">
                         Бүртгэл үүсгэх
                     </span>
                 </p>

@@ -21,7 +21,7 @@ export default function VerifyEmail(){
     useEffect(() => {
         if(email && code) {
             const verify = async () => {
-                const response = await verifyEmail(email, code)
+                const response = await verifyEmail({email, code})
                 if(response && response.status == 200) {
                     setSuccess(true)
                     setMessage('Имэйл хаяг амжилттай баталгаажлаа 🤗')
@@ -42,16 +42,16 @@ export default function VerifyEmail(){
                 <>
                     { success ? (
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-                            <CircleCheck className='w-20 h-20 text-zinc-50' />
+                            <CircleCheck className='w-20 h-20 text-dark-50' />
                         </motion.div>
                     ) : (
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-                            <CircleX className='w-20 h-20 text-zinc-50' />
+                            <CircleX className='w-20 h-20 text-dark-50' />
                         </motion.div>
                     ) }
-                    <motion.div className='text-center text-xl font-semibold text-zinc-50 px-8' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>{ message }</motion.div>
+                    <motion.div className='text-center text-xl font-semibold text-dark-50 px-8' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>{ message }</motion.div>
                     <motion.div className='flex-grow-0 mt-4' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
-                        <button onClick={() => router.push('/')} type="button" className="rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-zinc-50 shadow-sm hover:bg-white/20" >
+                        <button onClick={() => router.push('/')} type="button" className="rounded-md bg-dark-50/10 px-3.5 py-2.5 text-sm font-semibold text-dark-50 shadow-sm hover:bg-dark-50/20" >
                             Нүүр хуудас
                         </button>
                     </motion.div>
